@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../style/index.scss';
 
 class App extends Component {
   constructor(props) {
@@ -14,13 +15,13 @@ class App extends Component {
 
     if (initialLoading) {
       return (
-        <div className="initial-loading">
-          loading...
+        <div className="screen__loading">
+          <p className="loading">loading...</p> 
         </div>
       )
     } else {
       return (
-        <div className="app">
+        <div className="screen">
           app start
         </div>
       )
