@@ -1,8 +1,14 @@
 import React from 'react';
 
+import Clock from '../container/Clock';
 const Header = (props) => (
   <header>
-    {props.title}
+    <div className="header__left-side">
+
+    </div>
+    <div className="header__right-side">
+      <Clock />
+    </div>
   </header>
 );
 

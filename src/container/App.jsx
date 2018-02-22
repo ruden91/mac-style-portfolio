@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../style/index.scss';
 
 // component
-import Header from '../component/Header';
-import Footer from '../component/Footer';
 import MainLoader from '../component/MainLoader';
+import MainLoginForm from './MainLoginForm';
+import Wallpapers from './Wallpapers';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      initialLoading: true
+      initialLoading: false
     }
   }
 
@@ -25,8 +26,12 @@ class App extends Component {
     } else {
       return (
         <div className="screen">
-          <Header title="헤더" />
-          <Footer />
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={MainLoginForm} />
+              <Route path="/main" component={Wallpapers} />
+            </Switch>
+          </BrowserRouter>
         </div>
       )
     }
@@ -40,6 +45,9 @@ class App extends Component {
         initialLoading: false
       })
     }, 5000)
+  }
+
+  componentWillUnmount() {
   }
 }
 

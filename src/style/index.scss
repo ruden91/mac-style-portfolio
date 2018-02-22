@@ -1,4 +1,8 @@
 .screen {
+  height: 100vh;
+  background-image: url('./images/screen_main_bg.jpg');
+  background-position: center;
+  background-size: cover;
 }
 .screen__loading {
   position: relative;
