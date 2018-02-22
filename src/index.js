@@ -7,5 +7,6 @@ import App from './App';
 // default css setting
 import 'normalize.css';
 import './index.css';
+import './style/index.scss'
 
 ReactDOM.render(<App />, document.getElementById('root'));
