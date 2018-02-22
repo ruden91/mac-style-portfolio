@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import '../style/index.scss';
 
+// component
+import Header from '../component/Header';
+import Footer from '../component/Footer';
+import MainLoader from '../component/MainLoader';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -15,14 +20,13 @@ class App extends Component {
 
     if (initialLoading) {
       return (
-        <div className="screen__loading">
-          <p className="loading">loading...</p> 
-        </div>
+        <MainLoader />
       )
     } else {
       return (
         <div className="screen">
-          app start
+          <Header title="헤더" />
+          <Footer />
         </div>
       )
     }
@@ -35,7 +39,7 @@ class App extends Component {
       this.setState({
         initialLoading: false
       })
-    }, 3000)
+    }, 5000)
   }
 }
 

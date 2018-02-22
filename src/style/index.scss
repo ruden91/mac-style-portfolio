@@ -1,19 +1,52 @@
 .screen {
 }
-
 .screen__loading {
   position: relative;
   background-color: #000;
   width: 100%;
   height: 100vh;
-  transition: .5s all ease-in-out;
-
-  .loading {
+  .fa-apple {
+    color: #fff;
+  }
+  .screen__icon {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 36px;
   }
+  #progressbar{
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 150%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    background: rgba(159, 159, 159, 0.5);
+    border-radius: 10px;
+  }
+  #loading{
+    transition: all 500ms ease;
+    height: 2px;
+    width: 100%;
+    border-radius: 8px;
+    background: #fff;
+    position: absolute;
+    display: inline-block;
+    animation: load 5s ease infinite;
+  }
+  #load{
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -30px;
+  }
+
+  @keyframes load{
+    0%{
+      width: 2%;
+    }
+    10%{
+      width: 8%;
+    }
+  }  
 }
