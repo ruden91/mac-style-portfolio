@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from '../component/Header';
-import GlobalNavigator from '../component/GlobalNavigator';
+import GlobalNavigator from './GlobalNavigator';
 class Wallpapers extends Component {
   constructor(props) {
     super(props);
