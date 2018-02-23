@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Header from '../component/Header';
+import GlobalNavigator from '../component/GlobalNavigator';
 class Wallpapers extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +10,9 @@ class Wallpapers extends Component {
   render() {
     return (
       <div>
-        Wallpapers
+        <Header />
+
+        <GlobalNavigator />
       </div>
     )
   }

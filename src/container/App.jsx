@@ -26,6 +26,7 @@ class App extends Component {
     } else {
       return (
         <div className="screen">
+          <div className="screen__blur"></div>
           <BrowserRouter>
             <Switch>
               <Route exact path="/" component={MainLoginForm} />
@@ -38,7 +39,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log(localStorage)
     if (localStorage.getItem('initialLoading') == null) {
       localStorage.setItem('initialLoading', true);
      this.setState({
@@ -60,9 +60,9 @@ class App extends Component {
     }
   }
 
-  // componentWillUnmount() {
-  //   localStorage.clear();
-  // }
+  componentWillUnmount() {
+    localStorage.clear();
+  }
 }
 
 export default App;

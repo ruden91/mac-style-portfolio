@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from '../component/Header';
-
+import { Link } from 'react-router-dom';
 class MainLoginForm extends Component {
   constructor(props) {
     super(props);
@@ -11,14 +11,16 @@ class MainLoginForm extends Component {
     return (
       <div className="main-login-form">
         <Header />
-        <button onClick={this.handleShutOffButton}>종료</button>
+        <div className="main-login-form__center-content">
+          <span className="main-login-form__avatar">
+            <img src="http://lofrev.net/wp-content/photos/2017/03/dva_pink_logo.png" />
+          </span>
+          <p>userName</p>
+          <Link className="main-login-form__submit-button" to="/main"></Link>
+          <input type="text" placeholder="Enter Password"/>
+        </div>
       </div>
     )
-  }
-  handleShutOffButton(e) {
-    console.log(localStorage)
-    localStorage.clear();
-    console.log(localStorage)
   }
 };
 
