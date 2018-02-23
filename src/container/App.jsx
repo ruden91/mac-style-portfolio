@@ -12,8 +12,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      initialLoading: false
-    }
+      initialLoading: true == localStorage.getItem('initialLoading')
+    }    
   }
 
   render() {
@@ -37,18 +37,32 @@ class App extends Component {
     }
   }
 
+  componentWillMount() {
+    console.log(localStorage)
+    if (localStorage.getItem('initialLoading') == null) {
+      localStorage.setItem('initialLoading', true);
+     this.setState({
+      initialLoading: true
+     }) 
+    }
+  }
+
   componentDidMount() {
-    setTimeout(() => {
-      console.log('loading 완료');
+    if (this.state.initialLoading) {
+      setTimeout(() => {
+        console.log('loading 완료');
 
-      this.setState({
-        initialLoading: false
-      })
-    }, 5000)
+        localStorage.setItem('initialLoading', false);
+        this.setState({
+          initialLoading: false
+        })
+      }, 5000)
+    }
   }
 
-  componentWillUnmount() {
-  }
+  // componentWillUnmount() {
+  //   localStorage.clear();
+  // }
 }
 
 export default App;

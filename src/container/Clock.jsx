@@ -12,12 +12,12 @@ class Clock extends Component {
   render() {
     const { currentTime } = this.state;
     return (
-      <div>
+      <span className="clock">
         { currentTime.toLocaleTimeString() }
-      </div>
+      </span>
     )
   }
-
+  // timer function
   tick() {
     this.setState({
       currentTime: new Date()
@@ -29,6 +29,7 @@ class Clock extends Component {
   }
 
   componentWillUnmount() {
+    // clear timer function
     clearInterval(this.timer);
   }
 }

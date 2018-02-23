@@ -1,8 +1,37 @@
+header {
+  line-height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .header__left-side {
+    float: left;
+    width: 50%;
+  }
+  .header__right-side {
+    float: right;
+    width: 50%;
+    text-align: right;
+    .fa-battery-full {
+      font-size: 14px;
+      padding-right: 5px;
+      color: #fff;
+    }
+  }
+}
+
 .screen {
   height: 100vh;
   background-image: url('./images/screen_main_bg.jpg');
   background-position: center;
   background-size: cover;
+}
+.clock {
+  color: #fff;
 }
 .screen__loading {
   position: relative;
