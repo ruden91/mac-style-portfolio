@@ -1,3 +1,9 @@
+/* mixin style */
+@import './helpers/mixins';
+
+/* component style */
+@import './component/index';
+
 header {
   line-height: 30px;
   padding-left: 10px;
@@ -147,3 +153,4 @@ header {
     margin-top: 10px;
   }
 }
+
