@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { DragSource } from 'react-dnd';
-
+// import '../style/component/_GlobalNavigator.scss';
 /**
  * Implements the drag source contract.
  */
@@ -22,6 +22,8 @@ class GlobalNavigator extends Component {
   constructor(props) {
     super(props);
     console.log(DragSource);
+
+    this.handleAppButton = this.handleAppButton.bind(this);
   }
 
   render() {
@@ -31,7 +33,7 @@ class GlobalNavigator extends Component {
       <nav className="global-navigator">
         <div className="global-navigator__content">
           <ul>
-            <li>
+            <li onClick={this.handleAppButton}>
               <i className="fab fa-instagram fa-2x"></i>
             </li>
             <li>
@@ -50,6 +52,11 @@ class GlobalNavigator extends Component {
         </div>
       </nav>
     )
+  }
+  handleAppButton(e) {
+    e.preventDefault();
+    
+    console.log('target app 불러오기')
   }
 };
 
